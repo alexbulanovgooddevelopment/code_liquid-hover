@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Liquid Hover — атмосферный эффект раскрытия изображения при движении мыши на GSAP."
+    />
+    <title>Liquid Hover</title>
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"
+      defer
+    ></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-content-foreground">
+        <h1 class="title">Dig In</h1>
+      </div>
+      <div class="hero-content-background">
+        <p class="text">
+          The things worth finding are never on the surface. They live in the
+          parts you almost scrolled past.
+        </p>
+      </div>
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+        class="smudge-revealer"
+      >
+        <defs>
+          <filter id="smudge-goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="25" />
+            <feColorMatrix
+              type="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 60 -14"
+            />
+          </filter>
+        </defs>
+        <mask id="smudge-mask">
+          <g class="smudge-blobs" filter="url(#smudge-goo)"></g>
+        </mask>
+      </svg>
+    </section>
+  </body>
+</html>
